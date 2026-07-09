@@ -64,6 +64,9 @@ class I3rabEngine:
         for word, info in db.NAHW_RULES["inna_family"]["items"].items():
             bare_word = re.sub(r'[ًٌٌٍٍَُِّْ]', '', word)
             if prev_bare == bare_word:
+                # FIX: Ignorer "أنْ" المصدرية si le mot suivant est un verbe
+                if bare_word in ["أن", "إن"] and tokens[idx].pos in ("verb", "V"):
+                    continue
                 template = db.NAHW_RULES["inna_family"]["i3rab_template"]
                 # Trouver le khabar (2 mots après)
                 khabar = tokens[idx + 1].bare if idx + 1 < len(tokens) else "..."
