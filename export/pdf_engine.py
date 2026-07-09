@@ -277,7 +277,7 @@ class PDFEngine:
         # Texte vocalisé
         html_parts.append(
             f'<div class="section-title">📖 النص المشكّل</div>'
-            f'<div class="text-section">{exam.vocalized_text}</div>'
+            f'<div class="text-section" dir="rtl">{exam.vocalized_text}</div>'
         )
 
         # QCM
@@ -423,4 +423,4 @@ class PDFEngine:
         if exam.qr_code_b64:
             html_parts.append(f'<img src="{exam.qr_code_b64}" class="qr-code" />')
 
-        return f'<html><head><meta charset="utf-8"></head><body>{"".join(html_parts)}</body></html>'
+        return f'<html dir="rtl" lang="ar"><head><meta charset="utf-8"></head><body dir="rtl">{"".join(html_parts)}</body></html>'
