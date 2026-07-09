@@ -4,7 +4,7 @@ loguru>=0.7.2
 
 # NLP Arabe
 pyarabic>=0.6.3
-mishkal>=0.4.2
+mishkal>=0.4.1
 qalsadi>=0.3.3
 camel-tools>=1.5.0
 
