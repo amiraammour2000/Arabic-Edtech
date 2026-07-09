@@ -4,7 +4,7 @@ import random
 import uuid
 from typing import List
 from loguru import logger
-from core.nlp_pipeline import NLPPipeline, Sentence
+from core.nlp_pipeline import NLPPipeline, Sentence, Token
 from core.models import QuestionCloze, DifficultyLevel, BloomLevel
 from core.i3rab_engine import I3rabEngine
 from core import linguistics_db as db
