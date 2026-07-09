@@ -150,6 +150,8 @@ class NLPPipeline:
         text = re.sub(r'([؟!،.:؛])([^\s])', r'\1 \2', text)
         # Supprimer les diacritiques doubles (bug de certains modèles)
         text = re.sub(r'[\u064B-\u0652]{2,}', '', text)
+        # FIX MISHKAL: Supprimer le Shadda (ّ) isolé à la fin d'un mot
+        text = re.sub(r'ّ(?=\s|[؟!،.:؛]|$)', '', text)
         return text
 
     # ===================== TOKENISATION =====================
